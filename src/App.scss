@@ -1,0 +1,51 @@
+* {
+  font-family: "nato";
+}
+
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5rem !important;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.125rem !important;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 0.875rem !important;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 0.8125rem !important;
+  font-weight: 900;
+}
+
+h5 {
+  font-size: 0.75rem !important;
+  font-weight: 900;
+}
+
+h6 {
+  font-size: 0.6875rem !important;
+  font-weight: 600;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
