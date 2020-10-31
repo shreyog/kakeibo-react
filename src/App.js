@@ -3,7 +3,7 @@ import "./App.scss"
 const App = () => {
   return (
     <div >
-      Kakeibo
+      Kakeibo API
     </div>
   );
 }
