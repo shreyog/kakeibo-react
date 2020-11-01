@@ -1,5 +1,72 @@
+// Color Pallete
+
+$white: #fff;
+$light: #f8f9fa;
+$dark: #343a40;
+$black: #000;
+
+$blue: #007bff;
+$blue-light: #007bff10;
+$blue-hover: #007bff30;
+$blue-light-opaque: #eff7ff;
+$blue-mid: #007bff99;
+$pblue: #4c75f2;
+$pblue-light: #4c75f210;
+$pblue-hover: #4c75f230;
+$pblue-light-opaque: #eff7ff;
+$pblue-mid: #4c75f299;
+$cherry: #ff073a;
+$cherry-mid: #ff073a99;
+$cherry-light: #ff073a20;
+$cherry-hover: #ff073a30;
+$cherry-light-opaque: #ffe0e6;
+$red: #dc3545;
+$red-light: #dc354520;
+$red-mid: #dc354599;
+$red-hover: #dc354530;
+$orange: #fd7e14;
+$orange-mid: #fd7e1499;
+$orange-light: #fd7e1420;
+$orange-hover: #fd7e1430;
+$orange-light-opaque: #ffefe2;
+$yellow: #ffc107;
+$yellow-light: #ffc10720;
+$yellow-hover: #ffc10730;
+$yellow-mid: #ffc10799;
+$yellow-light-opaque: #fff7e0;
+$green: #28a745;
+$green-light: #28a74520;
+$green-hover: #28a74530;
+$green-mid: #28a74599;
+$gray: #6c757d;
+$gray-light: #6c757d10;
+$gray-light-opaque: #f6f6f7;
+$gray-hover: #6c757d20;
+$gray-mid: #6c757d99;
+$gray-middark: #6c757d30;
+$gray-dark: #343a40;
+$gray-opaque: #f1f1f1;
+$gray-hover-opaque: #edeeef;
+$gray-hover-darker-opaque: #f6f6f7;
+$purple: #201aa2dd;
+$purple-light: #201aa220;
+$purple-hover: #201aa230;
+$purple-mid: #201aa299;
+$purple-light-opaque: #e3e2f3;
+$pink: #fb5581;
+$pink-light: #ffa8cb30;
+$pink-hover: #ffa8cb60;
+$pink-mid: #fb558199;
+$brown: #b6854d;
+$brown-light: #b6854d10;
+$brown-hover: #b6854d30;
+$brown-mid: #b6854d99;
+$brick: #e23028;
+$brick-light: #e2302810;
+
 * {
   font-family: "nato";
+  // box-sizing: border-box;
 }
 
 html {
@@ -48,4 +115,289 @@ h6 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.arrow-up {
+  border-bottom: 5px solid $gray-mid;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: 0.25rem;
+}
+
+.arrow-down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid $gray-mid;
+  margin-left: 0.25rem;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  justify-content: space-between;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .navbar-left {
+    color: $gray-mid;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1.5rem;
+    text-align: center;
+    width: 3rem;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .navbar-middle {
+    color: $gray;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    span {
+      color: $pblue;
+    }
+  }
+
+  .navbar-right {
+    color: $gray;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1.5rem;
+    text-align: center;
+    width: 3rem;
+  }
+
+  .language-toggle {
+    cursor: pointer;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .expand {
+    background: $gray-light-opaque;
+    color: $gray;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    z-index: 9999;
+
+    & > * {
+      border-bottom: 1px solid $gray-light;
+      border-top: 1px solid $gray-light;
+      padding: 1.5rem;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        background: $gray-hover;
+      }
+
+      span {
+        &.focused {
+          background: $pblue-light;
+          color: $pblue;
+          padding: 0.25rem;
+        }
+      }
+    }
+
+    .expand-bottom {
+      align-self: flex-start;
+      border: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h5 {
+        margin: 0;
+      }
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    background: $gray-light-opaque;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    min-width: 5rem;
+    position: fixed;
+    z-index: 999;
+
+    .navbar-left {
+      margin-bottom: 0.5rem;
+      margin-top: auto;
+      order: 3;
+      text-align: center;
+    }
+
+    .navbar-middle {
+      font-size: 0.9rem;
+      order: 1;
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+      width: 46px;
+      word-wrap: break-word;
+    }
+
+    .navbar-right {
+      align-items: center;
+      background: $gray-light-opaque;
+      display: flex;
+      flex-direction: column;
+      order: 2;
+      padding-bottom: 0;
+      padding-top: 0;
+
+      span {
+        display: flex;
+        flex-direction: row;
+        height: 1.5rem;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+
+        &:hover {
+          color: $gray-mid;
+        }
+      }
+    }
+
+    .expand {
+      background: $gray-light-opaque;
+      flex-direction: column;
+      height: calc(100% - 5.5rem);
+      padding-left: 0;
+      padding-top: 5.75rem;
+      top: 0;
+      width: 15rem;
+
+      & > * {
+        border: 0;
+        color: $gray;
+        font-weight: 600;
+        height: 1.5rem;
+        width: 12rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  a {
+    &.button {
+      display: flex;
+      flex: row;
+      justify-content: center;
+      width: 10rem;
+
+      & > * {
+        align-self: center;
+      }
+
+      svg {
+        width: 38px;
+      }
+    }
+  }
+
+  .navbar {
+    .expand {
+      height: calc(100% - 4rem);
+      overflow: auto;
+      transform: none !important;
+    }
+
+    .expand-bottom {
+      margin-top: auto;
+    }
+
+    .navbar-right {
+      span {
+        display: none;
+
+        &:first-child {
+          display: initial;
+        }
+      }
+    }
+  }
+}
+
+// Animation Support
+
+.fadeInUp {
+  animation-duration: 0.45s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rotateDownRight {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: rotateDownRight;
+}
+
+@keyframes rotateDownRight {
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.rotateRightDown {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: rotateRightDown;
+}
+
+@keyframes rotateRightDown {
+  0% {
+    transform: rotate(-90deg);
+  }
+}
+
+.fadeOutDown {
+  animation-duration: 0.45s;
+  animation-fill-mode: both;
+  animation-name: fadeOutDown;
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
