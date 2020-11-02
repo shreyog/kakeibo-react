@@ -46,14 +46,11 @@ function Navbar({
     }
   }, [windowSize.width]);
 
-  const handleLangaugeSwitcher = useCallback(() => {
-    if (expand) setExpand(false);
-    setShowLanguageSwitcher(!showLanguageSwitcher);
-  }, [expand, showLanguageSwitcher, setExpand, setShowLanguageSwitcher]);
+
 
   return (
     <animated.div className="navbar" style={spring}>
-      <div className="navbar-left" onClick={handleLangaugeSwitcher.bind(this)}>
+      <div className="navbar-left" >
         {"hello"}
       </div>
 
@@ -72,30 +69,22 @@ function Navbar({
       >
         {windowSize.width < 769 && <span>{expand ? "Close" : "Menu"}</span>}
 
-        {windowSize.width > 769 && (
+        {/* {windowSize.width > 769 && (
           <React.Fragment>
             <Link to="/">
               <span>
                 <Icon.Home {...activeNavIcon("/")} />
               </span>
             </Link>
-            {/* <Link to="/blog">
-              <span>
-                <Icon.Book {...activeNavIcon('/blog')} />
-              </span>
-            </Link> */}
             <Link to="/about">
               <span>
                 <Icon.HelpCircle {...activeNavIcon("/about")} />
               </span>
             </Link>
-            {/* <span>
-              <SunMoon {...{darkMode}} />
-            </span> */}
           </React.Fragment>
-        )}
+        )} */}
       </div>
-
+      {transitions.map(({ item, key, props }) => {console.log("item", item, " key", key, " props", props);})}
       {transitions.map(({ item, key, props }) =>
         item ? (
           <animated.div key={key} style={props}>
